@@ -40,14 +40,30 @@ typedef struct{
 typedef struct{
 	uint8_t   reportID;
 	uint8_t   modifier;
-	uint8_t   reserved;
-	uint8_t   keycode[5];
+	uint8_t   _RESERVED;
+	uint8_t   byte1;
+	uint8_t   byte2;
+	//uint8_t 	backupKeys[3]; // In case of need, Plese modify the ReportDescriptor & Max_EPIN_Size accordingly. 
 } KeyboardReport_t;
+
+typedef union {
+	KeyboardReport_t keyboardReport;	// 5 Bytes
+	MouseReport_t mouseReport;				// 5 Bytes
+} ReportUnion;
+
+typedef struct {
+	uint8_t UniqueID;		// 1 Byte	| 1 Byte Recieve
+	ReportUnion Report;	// 5 Byte	| 3 Byte Recieve - ReportID + Byte1 + Byte2
+} KeyMemory;
+
 
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define FLASH_TIMEOUT		1000
+#define FLASH_UNLOCK_KEY1	0x45670123
+#define	FLASH_UNLOCK_KEY2	0xCDEF89AB
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -59,8 +75,19 @@ typedef struct{
 I2C_HandleTypeDef hi2c1;
 
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
+ReportUnion* KeyList; // The size: # of the keys
+
+/*
+
+KeyList[$UniqueID] = {
+	<ReportUnion> Report -> each is writen according to ReportID -> ReportUnioun Report.keyboardReport = incommingReport
+};
+
+*/
+uint8_t UART2_rxBuffer[12];
 MouseReport_t mouse_report;
 KeyboardReport_t keyboard_report;
 
@@ -73,6 +100,7 @@ extern uint8_t USBD_CUSTOM_HID_SendReport(USBD_HandleTypeDef  *pdev,
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
@@ -81,6 +109,7 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 
 /* USER CODE END 0 */
 
@@ -119,10 +148,13 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USB_DEVICE_Init();
   MX_I2C1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+	
+	HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 12);
 
   /* USER CODE END 2 */
 
@@ -136,13 +168,13 @@ int main(void)
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &mouse_report, sizeof(MouseReport_t));
 		HAL_Delay(500);
 		
-		keyboard_report.modifier		= 0;
-		keyboard_report.keycode[0] 	= 0x04;
+		keyboard_report.modifier	= 0;
+		keyboard_report.byte1 		= 0x04;
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &keyboard_report, sizeof(KeyboardReport_t));
 		HAL_Delay(500);
 		
-		keyboard_report.modifier		= 0;
-		keyboard_report.keycode[0] 	= 0x00;
+		keyboard_report.modifier	= 0;
+		keyboard_report.byte1 		= 0x00;
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &keyboard_report, sizeof(KeyboardReport_t));
 		HAL_Delay(500);
   }
@@ -260,6 +292,22 @@ static void MX_USART2_UART_Init(void)
 
 }
 
+/** 
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void) 
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel6_IRQn);
+
+}
+
 /**
   * @brief GPIO Initialization Function
   * @param None
@@ -276,6 +324,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    HAL_UART_Transmit(&huart2, UART2_rxBuffer, 12, 100);
+    HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 12);
+}
 
 /* USER CODE END 4 */
 
