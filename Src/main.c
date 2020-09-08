@@ -54,7 +54,7 @@ typedef union {
 typedef struct {
 	uint8_t UniqueID;		// 1 Byte	| 1 Byte Recieve
 	ReportUnion Report;	// 5 Byte	| 3 Byte Recieve - ReportID + Byte1 + Byte2
-} KeyMemory;
+} UART_Key_t;
 
 
 /* USER CODE END PTD */
@@ -64,6 +64,7 @@ typedef struct {
 #define FLASH_TIMEOUT		1000
 #define FLASH_UNLOCK_KEY1	0x45670123
 #define	FLASH_UNLOCK_KEY2	0xCDEF89AB
+#define NUMBER_OF_KEYS 8
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -78,7 +79,7 @@ UART_HandleTypeDef huart2;
 DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
-ReportUnion* KeyList; // The size: # of the keys
+ReportUnion KeyList[NUMBER_OF_KEYS]; // The size: # of the keys
 
 /*
 
@@ -87,7 +88,7 @@ KeyList[$UniqueID] = {
 };
 
 */
-uint8_t UART2_rxBuffer[12];
+uint8_t UART2_rxBuffer[4];
 MouseReport_t mouse_report;
 KeyboardReport_t keyboard_report;
 
@@ -153,8 +154,8 @@ int main(void)
   MX_I2C1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-	
-	HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 12);
+
+	HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 4);
 
   /* USER CODE END 2 */
 
@@ -327,8 +328,21 @@ static void MX_GPIO_Init(void)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    HAL_UART_Transmit(&huart2, UART2_rxBuffer, 12, 100);
-    HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 12);
+		if(UART2_rxBuffer[1] == 0x01){			// Unique ID UART2_rxBuffer[0]
+			
+			KeyList[UART2_rxBuffer[0]].keyboardReport.reportID = 0x01;
+			KeyList[UART2_rxBuffer[0]].keyboardReport.modifier = UART2_rxBuffer[2];
+			KeyList[UART2_rxBuffer[0]].keyboardReport.byte1 = UART2_rxBuffer[3];
+			
+		} else if(UART2_rxBuffer[1] == 0x02){
+			
+			KeyList[UART2_rxBuffer[0]].mouseReport.reportID = 0x02;
+			KeyList[UART2_rxBuffer[0]].mouseReport.buttonMask = UART2_rxBuffer[2];
+			
+		}
+		
+    HAL_UART_Transmit(&huart2, UART2_rxBuffer, 4, 100);
+    HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 4);
 }
 
 /* USER CODE END 4 */

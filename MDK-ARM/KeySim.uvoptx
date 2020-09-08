@@ -153,22 +153,12 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ReportUnionSize</ItemText>
+          <ItemText>UART2_rxBuffer</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>KeyboardReportSize</ItemText>
-        </Ww>
-        <Ww>
-          <count>2</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>MouseReportSize</ItemText>
-        </Ww>
-        <Ww>
-          <count>3</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>USBD_CUSTOM_HID_SendReport</ItemText>
+          <ItemText>KeyList</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
