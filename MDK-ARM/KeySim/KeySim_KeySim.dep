@@ -1,7 +1,7 @@
 Dependencies for Project 'KeySim', Target 'KeySim': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
 F (startup_stm32f103xb.s)(0x5F56221E)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 531" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o keysim\startup_stm32f103xb.o --depend keysim\startup_stm32f103xb.d)
-F (../Src/main.c)(0x5F5641B6)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\main.o --omf_browse keysim\main.crf --depend keysim\main.d)
+F (../Src/main.c)(0x5F59D51C)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\main.o --omf_browse keysim\main.crf --depend keysim\main.d)
 I (../Inc/main.h)(0x5F56217D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5F48C781)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5F56217D)
@@ -32,8 +32,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
 I (../Inc/usb_device.h)(0x5F56217B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -67,8 +67,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -108,8 +108,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -118,9 +118,9 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5F48C784)
-F (../Src/usbd_desc.c)(0x5F56217C)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_desc.o --omf_browse keysim\usbd_desc.crf --depend keysim\usbd_desc.d)
+F (../Src/usbd_desc.c)(0x5F58DAD9)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_desc.o --omf_browse keysim\usbd_desc.crf --depend keysim\usbd_desc.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5F48C784)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -153,16 +153,16 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5F48C784)
 I (../Inc/usbd_desc.h)(0x5F56217B)
-F (../Src/usbd_custom_hid_if.c)(0x5F56217C)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_custom_hid_if.o --omf_browse keysim\usbd_custom_hid_if.crf --depend keysim\usbd_custom_hid_if.d)
+F (../Src/usbd_custom_hid_if.c)(0x5F59D2F2)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_custom_hid_if.o --omf_browse keysim\usbd_custom_hid_if.crf --depend keysim\usbd_custom_hid_if.d)
 I (../Inc/usbd_custom_hid_if.h)(0x5F56217C)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -811,7 +811,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c)(0x5F48C784)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_core.o --omf_browse keysim\usbd_core.crf --depend keysim\usbd_core.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5F48C784)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -844,13 +844,13 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5F48C781)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5F48C784)
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c)(0x5F48C784)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_ctlreq.o --omf_browse keysim\usbd_ctlreq.crf --depend keysim\usbd_ctlreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5F48C784)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -887,8 +887,8 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5F48C784)
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c)(0x5F48C784)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_ioreq.o --omf_browse keysim\usbd_ioreq.crf --depend keysim\usbd_ioreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)
@@ -923,11 +923,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5F48C782)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5F48C781)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5F48C784)
-F (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c)(0x5F48C784)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_customhid.o --omf_browse keysim\usbd_customhid.crf --depend keysim\usbd_customhid.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c)(0x5F58F0C7)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_KeySim-IC:\Users\ataberk.oklu\Documents\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ataberk.oklu\Documents\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o keysim\usbd_customhid.o --omf_browse keysim\usbd_customhid.crf --depend keysim\usbd_customhid.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5F48C784)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5F48C784)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F563639)
-I (../Inc/usbd_conf.h)(0x5F56217B)
+I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5F58ED74)
+I (../Inc/usbd_conf.h)(0x5F59D2ED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC7BC4C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC7BC54)

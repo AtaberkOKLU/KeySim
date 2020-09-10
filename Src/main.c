@@ -46,6 +46,36 @@ typedef struct{
 	//uint8_t 	backupKeys[3]; // In case of need, Plese modify the ReportDescriptor & Max_EPIN_Size accordingly. 
 } KeyboardReport_t;
 
+typedef struct
+{
+  uint8_t  reportId;                                 // Report ID = 0x03 (3)
+                                                     // Collection: CA:TouchScreen CL:Finger
+  uint8_t  DIG_TouchScreenFingerTipSwitch : 1;       // Usage 0x000D0042: Tip Switch, Value = 0 to 1
+  uint8_t  DIG_TouchScreenFingerInRange : 1;         // Usage 0x000D0032: In Range, Value = 0 to 1
+  uint8_t  DIG_TouchScreenFingerConfidence : 1;      // Usage 0x000D0047: Confidence, Value = 0 to 1
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  DIG_TouchScreenFingerContactIdentifier;   // Usage 0x000D0051: Contact Identifier, Value = 0 to 1
+  uint8_t  GD_TouchScreenFingerX;                    // Usage 0x00010030: X, Value = 0 to 4213
+  uint8_t  GD_TouchScreenFingerY;                    // Usage 0x00010031: Y, Value = 0 to 4213
+  uint8_t  DIG_TouchScreenFingerTipSwitch_1 : 1;     // Usage 0x000D0042: Tip Switch, Value = 0 to 1
+  uint8_t  DIG_TouchScreenFingerInRange_1 : 1;       // Usage 0x000D0032: In Range, Value = 0 to 1
+  uint8_t  DIG_TouchScreenFingerConfidence_1 : 1;    // Usage 0x000D0047: Confidence, Value = 0 to 1
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  DIG_TouchScreenFingerContactIdentifier_1; // Usage 0x000D0051: Contact Identifier, Value = 0 to 1
+  uint8_t  GD_TouchScreenFingerX_1;                  // Usage 0x00010030: X, Value = 0 to 4213
+  uint8_t  GD_TouchScreenFingerY_1;                  // Usage 0x00010031: Y, Value = 0 to 4213
+                                                     // Collection: CA:TouchScreen
+  uint8_t  DIG_TouchScreenContactCount;              // Usage 0x000D0054: Contact Count, Value = 0 to 8
+} TouchScreenReport_t;
+
 typedef union {
 	KeyboardReport_t keyboardReport;	// 5 Bytes
 	MouseReport_t mouseReport;				// 5 Bytes
@@ -91,6 +121,7 @@ KeyList[$UniqueID] = {
 uint8_t UART2_rxBuffer[4];
 MouseReport_t mouse_report;
 KeyboardReport_t keyboard_report;
+TouchScreenReport_t touch_screen_report;
 
 extern USBD_HandleTypeDef hUsbDeviceFS;
 extern uint8_t USBD_CUSTOM_HID_SendReport(USBD_HandleTypeDef  *pdev,
@@ -128,6 +159,16 @@ int main(void)
 	mouse_report.buttonMask = 0;
 	
 	keyboard_report.reportID		= 0x01;
+	
+	touch_screen_report.reportId = 0x03;
+	touch_screen_report.DIG_TouchScreenFingerTipSwitch 		= 1;
+	touch_screen_report.DIG_TouchScreenFingerInRange 			= 1;
+	touch_screen_report.DIG_TouchScreenFingerConfidence 	= 1;
+	touch_screen_report.GD_TouchScreenFingerX 						= (uint16_t) 100;
+	touch_screen_report.GD_TouchScreenFingerY 						= (uint16_t) 100;
+	touch_screen_report.DIG_TouchScreenFingerContactIdentifier = 0;
+	touch_screen_report.DIG_TouchScreenContactCount = 1;
+
 
   /* USER CODE END 1 */
 
@@ -168,7 +209,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &mouse_report, sizeof(MouseReport_t));
 		HAL_Delay(500);
-		
+
 		keyboard_report.modifier	= 0;
 		keyboard_report.byte1 		= 0x04;
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &keyboard_report, sizeof(KeyboardReport_t));
@@ -178,6 +219,10 @@ int main(void)
 		keyboard_report.byte1 		= 0x00;
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &keyboard_report, sizeof(KeyboardReport_t));
 		HAL_Delay(500);
+
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, (uint8_t *) &touch_screen_report, sizeof(TouchScreenReport_t));
+		HAL_Delay(500);
+
   }
   /* USER CODE END 3 */
 }

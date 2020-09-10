@@ -142,11 +142,74 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
 	0x75, 0x08,        //     Report Size (8)
 	0x95, 0x03,        //     Report Count (3)
 	0x81, 0x06,        //     Input (Data,Var,Rel,No Wrap,Linear,Preferred State,No Null Position)
+	0xC0,              //   End Collection		
+  0xC0,    					 /*   Mouse END_COLLECTION	             */
+
+	0x05, 0x0D,        // Usage Page (Digitizer)
+	0x09, 0x04,        // Usage (Touch Screen)
+	0xA1, 0x01,        // Collection (Application)
+	0x85, 0x03,        //   Report ID (3)
+	0x09, 0x22,        //   Usage (Finger)
+	0xA1, 0x02,        //   Collection (Logical)
+	0x09, 0x42,        //     Usage (Tip Switch)
+	0x14,              //     Logical Minimum
+	0x25, 0x01,        //     Logical Maximum (1)
+	0x75, 0x01,        //     Report Size (1)
+	0x95, 0x01,        //     Report Count (1)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x32,        //     Usage (In Range)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x47,        //     Usage (0x47)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x95, 0x05,        //     Report Count (5)
+	0x81, 0x03,        //     Input (Const,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x75, 0x08,        //     Report Size (8)
+	0x09, 0x51,        //     Usage (0x51)
+	0x95, 0x01,        //     Report Count (1)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x05, 0x01,        //     Usage Page (Generic Desktop Ctrls)
+	0x26, 0x75, 0x10,  //     Logical Maximum (4213)
+	0x09, 0x30,        //     Usage (X)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x31,        //     Usage (Y)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
 	0xC0,              //   End Collection
-	// 100 + 1	bytes
-		
+	0x05, 0x0D,        //   Usage Page (Digitizer)
+	0x09, 0x22,        //   Usage (Finger)
+	0xA1, 0x02,        //   Collection (Logical)
+	0x09, 0x42,        //     Usage (Tip Switch)
+	0x25, 0x01,        //     Logical Maximum (1)
+	0x75, 0x01,        //     Report Size (1)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x32,        //     Usage (In Range)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x47,        //     Usage (0x47)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x95, 0x05,        //     Report Count (5)
+	0x81, 0x03,        //     Input (Const,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x75, 0x08,        //     Report Size (8)
+	0x95, 0x01,        //     Report Count (1)
+	0x09, 0x51,        //     Usage (0x51)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x05, 0x01,        //     Usage Page (Generic Desktop Ctrls)
+	0x26, 0x75, 0x10,  //     Logical Maximum (4213)
+	0x09, 0x30,        //     Usage (X)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x31,        //     Usage (Y)
+	0x81, 0x02,        //     Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0xC0,              //   End Collection
+	0x05, 0x0D,        //   Usage Page (Digitizer)
+	0x09, 0x54,        //   Usage (0x54)
+	0x75, 0x08,        //   Report Size (8)
+	0x25, 0x08,        //   Logical Maximum (8)
+	0x81, 0x02,        //   Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+	0x09, 0x55,        //   Usage (0x55)
+	0xB1, 0x02,        //   Feature (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
+	0xC0,              // End Collection
+
+	// 120 bytes
+
   /* USER CODE END 0 */
-  0xC0    /*     END_COLLECTION	             */
 };
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
